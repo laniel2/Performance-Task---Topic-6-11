@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration Form</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <h1>Student Registration Form</h1>
+    <p class="intro">Please complete all fields before submitting.</p>
+
+    <p id="successMessage" class="success" role="status" hidden></p>
+
+    <form id="registrationForm" novalidate>
+      <h2>Personal Information</h2>
+
+      <label for="studentId">Student ID</label>
+      <input type="text" id="studentId" name="studentId"
+        data-error="Please enter your student ID.">
+      <span class="error-message" id="studentIdError"></span>
+
+      <label for="fullName">Full Name</label>
+      <input type="text" id="fullName" name="fullName"
+        data-error="Please enter your full name.">
+      <span class="error-message" id="fullNameError"></span>
+
+      <label for="email">Email</label>
+      <input type="text" id="email" name="email"
+        data-error="Please enter your email address.">
+      <span class="error-message" id="emailError"></span>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" placeholder="09XXXXXXXXX"
+        data-phone-format="11 digits starting with 09"
+        data-error="Please enter your phone number.">
+      <span class="hint">Format: 11 digits starting with 09.</span>
+      <span class="error-message" id="phoneError"></span>
+
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob" name="dob"
+        data-error="Please enter your date of birth.">
+      <span class="error-message" id="dobError"></span>
+
+      <label>Gender</label>
+      <div class="radio-group" id="genderGroup">
+        <label><input type="radio" name="gender" value="Female"> Female</label>
+        <label><input type="radio" name="gender" value="Male"> Male</label>
+        <label><input type="radio" name="gender" value="Prefer not to say"> Prefer not to say</label>
+      </div>
+      <span class="error-message" id="genderError"></span>
+
+      <h2>Academic Information</h2>
+
+      <label for="program">Program</label>
+      <select id="program" name="program" data-error="Please select your program.">
+        <option value="">Select your program</option>
+        <option>BS Information Technology</option>
+        <option>BS Computer Science</option>
+        <option>BS Information Systems</option>
+        <option>BS Business Administration</option>
+        <option>BS Education</option>
+        <option>Other</option>
+      </select>
+      <span class="error-message" id="programError"></span>
+
+      <label for="yearLevel">Year Level</label>
+      <select id="yearLevel" name="yearLevel" data-error="Please select your year level.">
+        <option value="">Select your year level</option>
+        <option>1st Year</option>
+        <option>2nd Year</option>
+        <option>3rd Year</option>
+        <option>4th Year</option>
+        <option>5th Year</option>
+      </select>
+      <span class="error-message" id="yearLevelError"></span>
+
+      <h2>Account Details</h2>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password"
+        data-error="Please enter a password.">
+      <span class="error-message" id="passwordError"></span>
+
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" id="confirmPassword" name="confirmPassword"
+        data-error="Please confirm your password.">
+      <span class="error-message" id="confirmPasswordError"></span>
+
+      <button type="button" id="togglePassword" class="small-button"
+        data-mode="hidden">Show/Hide Passwords</button>
+
+      <label for="address">Address</label>
+      <textarea id="address" name="address" rows="3"
+        data-error="Please enter your address."></textarea>
+      <span class="error-message" id="addressError"></span>
+
+      <label class="agreement" for="agreement">
+        <input type="checkbox" id="agreement" name="agreement">
+        I confirm that the information I provided is correct.
+      </label>
+      <span class="error-message" id="agreementError"></span>
+
+      <div class="buttons">
+        <button type="reset" class="reset-button">Reset Form</button>
+        <button type="submit">Submit Registration</button>
+      </div>
+    </form>
+    <p class="footer">WS 301 — Performance Task: Form Validation</p>
+  </main>
+</body>
+</html>
